@@ -1,4 +1,4 @@
-const images = [
+const gamesTitles = [
   {
     image: "img/01.webp",
     title: "Marvel's Spiderman Miles Morale",

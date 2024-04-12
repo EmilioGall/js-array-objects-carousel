@@ -29,16 +29,26 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 - [x] Define *function(printTitleOnDisplay)*
     - [x] Define *constant* for display div HTMLelement. (displayDivElem)
-    - [x] Print in (displayDivElem) the attributes of (printTitleOnDisplay).
+    - [x] Print on (displayDivElem) the attributes of (printTitleOnDisplay).
 
 ### DATA COLLECTION
 
 - [x] Define *constant* for array of objects Titles. (gamesTitles)
 
+#### Elements in DOM
+
+- [x] Define *constant* for Previous Button element. (previousButton)
+- [x] Define *constant* for Next Button element. (nextButton)
+
 ### LOGICAL EXECUTION
 
 - [x] **FOR EACH** object element of the array (gamesTitles)
-
     - [x] Invoke function(printTitleOnDisplay)
 
-### OUTPUT
+- [x] Define *constant* for Carousel Item DOM element. (previousButton)
+
+- [x] Define *variable* for Active Index. (activeIndex)
+
+- [x] **ADD EVENT** *click* on (previousButton)
+    - [x] **ADD EVENT** *click* on (previousButton)
+

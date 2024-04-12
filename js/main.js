@@ -1,3 +1,4 @@
+// Define *constant* for array of objects Titles.
 const gamesTitles = [
   {
     image: "img/01.webp",
@@ -26,12 +27,50 @@ const gamesTitles = [
   },
 ];
 
+// Define *constant* for Previous Button DOM Element.
+const previousButton = document.querySelector(".my-previous");
 
+console.log("previousButton", previousButton, typeof previousButton);
+
+// Define *constant* for Next Button DOM Element.
+const nextButton = document.querySelector(".my-next")
+
+console.log("nextButton", nextButton, typeof nextButton);
+
+// Print in (displayDivElem) the attributes of (printTitleOnDisplay).
 gamesTitles.forEach((curTitle, indexTitle)=> {
 
   console.log(curTitle);
 
   printTitleOnDisplay(curTitle, indexTitle);
 
+});
+
+// Define *variable* for Active Index.
+let activeIndex = 0;
+
+// Define *constant* for Carousel Item DOM Element.
+const carouselItemArray = document.querySelectorAll(".my-carousel-item");
+
+console.log("carouselItemArray", carouselItemArray, typeof carouselItemArray);
+
+// Add class "active" to Carousel Item DOM Element.
+
+carouselItemArray.forEach((carouselItem, carouselIndex)=> {
+
+  console.log(carouselItem, carouselIndex);
+
+  if (carouselIndex === activeIndex) {
+
+    carouselItem[carouselIndex].classList.add("active");
+
+  };
+
+});
+
+previousButton.addEventListener("click", ()=> {
+  
+  showNext();
+  
 });
 

@@ -25,13 +25,20 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
 ## Solution
 
+### FUNCTIONS
+
+- [x] Define *function(printTitleOnDisplay)*
+    - [x] Define *constant* for display div HTMLelement. (displayDivElem)
+    - [x] Print in (displayDivElem) the attributes of (printTitleOnDisplay).
+
 ### DATA COLLECTION
 
-- [x] Define constant for array of objects Titles. (gamesTitles)
-
-
+- [x] Define *constant* for array of objects Titles. (gamesTitles)
 
 ### LOGICAL EXECUTION
 
+- [x] **FOR EACH** object element of the array (gamesTitles)
+
+    - [x] Invoke function(printTitleOnDisplay)
 
 ### OUTPUT

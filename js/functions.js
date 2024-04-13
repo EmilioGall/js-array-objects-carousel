@@ -1,5 +1,5 @@
 /**
- * Description: function prints title in display DOM element.
+ * Description: function prints titles in display DOM element.
  * @param {object} titleToPrintOnDisplay
  */
 function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
@@ -29,7 +29,7 @@ function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
 };
 
 /**
- * Description: function prints title in thumbnails DOM element.
+ * Description: function prints titles in thumbnails DOM element.
  * @param {object} titleToPrintOnThumbnails
  */
 function printTitleOnThumbnails(titleToPrintOnThumbnails) {
@@ -41,7 +41,9 @@ function printTitleOnThumbnails(titleToPrintOnThumbnails) {
 
     // Print on (thumbnailsDivElem) the attributes of (printTitleOnThumbnails).
     thumbnailsDivElem.innerHTML += `
-    <img class="img-fluid my-thumbnail" src="./${titleToPrintOnThumbnails.image}" alt="${titleToPrintOnThumbnails.title} picture" />
+    <div class="my-thumbnail">
+        <img class="img-fluid" src="./${titleToPrintOnThumbnails.image}" alt="${titleToPrintOnThumbnails.title} picture" />
+    </div>
     `;
 
 };

@@ -37,25 +37,26 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 - [x] Define *function(activeClassOffActiveIndex)*
     - [x] Remove class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
 
-### DATA COLLECTION
-
-- [x] Define *constant* for array of objects Titles. (gamesTitles)
-
-#### Elements in DOM
-
-- [x] Define *constant* for Previous Button element. (previousButton)
-- [x] Define *constant* for Next Button element. (nextButton)
 
 ### LOGICAL EXECUTION
 
+- [x] Define *constant* for array of objects Titles. (gamesTitles)
+
 - [x] **FOR EACH** object element of the array (gamesTitles)
     - [x] Invoke function(printTitleOnDisplay)
+
+- [x] Define *constant* for Previous Button element. (previousButton)
+- [x] Define *constant* for Next Button element. (nextButton)
 
 - [x] Define *variable* for Active Index. (activeIndex)
 
 - [x] Define *constant* for Carousel Item DOM element. (carouselItemArrayElem)
 
-- [x] Invoke function(activeClassOnActiveIndex)
+- [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
+
+- [x] Define *constant* for Thumbnails Item DOM element. (thumbnailsItemArrayElem)
+
+- [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
 
 - [x] **ADD EVENT** *click* on (nextButton)
     - [x] Invoke function(activeClassOffActiveIndex)

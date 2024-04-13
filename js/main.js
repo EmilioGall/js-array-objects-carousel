@@ -27,16 +27,6 @@ const gamesTitles = [
   },
 ];
 
-// Define *constant* for Previous Button DOM Element.
-const previousButton = document.querySelector(".my-previous");
-
-console.log("previousButton", previousButton, typeof previousButton);
-
-// Define *constant* for Next Button DOM Element.
-const nextButton = document.querySelector(".my-next")
-
-console.log("nextButton", nextButton, typeof nextButton);
-
 // Print in (displayDivElem) the attributes of (printTitleOnDisplay).
 gamesTitles.forEach((curTitle, indexTitle)=> {
 
@@ -48,6 +38,15 @@ gamesTitles.forEach((curTitle, indexTitle)=> {
 
 });
 
+// Define *constant* for Previous Button DOM Element.
+const previousButton = document.querySelector(".my-previous");
+
+// console.log("previousButton", previousButton, typeof previousButton);
+
+// Define *constant* for Next Button DOM Element.
+const nextButton = document.querySelector(".my-next")
+
+// console.log("nextButton", nextButton, typeof nextButton);
 
 // Define *variable* for Active Index.
 let activeIndex = 0;
@@ -55,10 +54,18 @@ let activeIndex = 0;
 // Define *constant* for Carousel Item DOM Element.
 const carouselItemArrayElem = document.querySelectorAll(".my-carousel-item");
 
-console.log("carouselItemArrayElem", carouselItemArrayElem, typeof carouselItemArrayElem);
+// console.log("carouselItemArrayElem", carouselItemArrayElem, typeof carouselItemArrayElem);
 
 // Add class "active" to Carousel Item DOM Element.
 activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
+// Define *constant* for Thumbnails Item DOM Element.
+const thumbnailsItemArrayElem = document.querySelectorAll(".my-thumbnail");
+
+// console.log("thumbnailsItemArrayElem", thumbnailsItemArrayElem, typeof thumbnailsItemArrayElem);
+
+// Add class "active" to Thumbnails Item DOM Element.
+activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
 
 // Add Event on *Click* for Next Button DOM Element.
 nextButton.addEventListener("click", ()=> {
@@ -69,16 +76,14 @@ nextButton.addEventListener("click", ()=> {
 
     activeIndex++
 
-    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
-
   } else {
 
     activeIndex = 0;
 
-    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
-
   };
   
+  activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
 });
 
 // Add Event on *Click* for Next Previous DOM Element.
@@ -90,14 +95,12 @@ previousButton.addEventListener("click", ()=> {
 
     activeIndex--
 
-    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
-
   } else {
 
     activeIndex = gamesTitles.length-1;
 
-    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
-
   };
   
+  activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
 });

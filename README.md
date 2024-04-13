@@ -63,7 +63,16 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
         - [x] Increment Active Index.
         - [x] Invoke function(activeClassOnActiveIndex)
     - [x] **ELSE**
-        - [x] Increment Active Index.
+        - [x] Set Active Index to 0.
+        - [x] Invoke function(activeClassOnActiveIndex)
+
+- [x] **ADD EVENT** *click* on (previousButton)
+    - [x] Invoke function(activeClassOffActiveIndex)
+    - [x] **IF** (activeIndex > 0)
+        - [x] Decrement Active Index.
+        - [x] Invoke function(activeClassOnActiveIndex)
+    - [x] **ELSE**
+        - [x] Set Active Index to gamesTitles.length-1.
         - [x] Invoke function(activeClassOnActiveIndex)
 
 

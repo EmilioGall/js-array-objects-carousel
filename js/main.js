@@ -57,7 +57,7 @@ console.log("carouselItemArrayElem", carouselItemArrayElem, typeof carouselItemA
 // Add class "active" to Carousel Item DOM Element.
 activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
-// Add class "active" to Carousel Item DOM Element.
+// Add Event on *Click* for Next Button DOM Element.
 nextButton.addEventListener("click", ()=> {
   
   activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
@@ -77,3 +77,26 @@ nextButton.addEventListener("click", ()=> {
   };
   
 });
+
+// Add Event on *Click* for Next Previous DOM Element.
+previousButton.addEventListener("click", ()=> {
+  
+  activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+
+  if (activeIndex > 0) {
+
+    activeIndex--
+
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
+  } else {
+
+    activeIndex = gamesTitles.length-1;
+
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
+  };
+  
+});
+
+console.log(gamesTitles.length);

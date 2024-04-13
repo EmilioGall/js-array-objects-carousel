@@ -7,7 +7,7 @@ function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
     // Define *constant* for Carousel Display DOM Element.
     const displayDivElem = document.querySelector(".my-carousel-images");
 
-    console.log("displayDivElem", displayDivElem);
+    // console.log("displayDivElem", displayDivElem);
 
     // Print on (displayDivElem) the attributes of (printTitleOnDisplay).
     displayDivElem.innerHTML += `
@@ -31,7 +31,7 @@ function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
 
 function showNext() {
 
-    carouselItem[activeIndex].classList.remove("active");
+    carouselItem.classList.remove("active");
 
     if (activeIndex < gamesTitles.length-1) {
 

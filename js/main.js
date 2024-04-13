@@ -50,27 +50,42 @@ gamesTitles.forEach((curTitle, indexTitle)=> {
 let activeIndex = 0;
 
 // Define *constant* for Carousel Item DOM Element.
-const carouselItemArray = document.querySelectorAll(".my-carousel-item");
+const carouselItemArrayElem = document.querySelectorAll(".my-carousel-item");
 
-console.log("carouselItemArray", carouselItemArray, typeof carouselItemArray);
+console.log("carouselItemArrayElem", carouselItemArrayElem, typeof carouselItemArrayElem);
 
 // Add class "active" to Carousel Item DOM Element.
 
-carouselItemArray.forEach((carouselItem, carouselIndex)=> {
+carouselItemArrayElem.forEach((carouselItem, carouselIndex)=> {
 
   console.log(carouselItem, carouselIndex);
 
   if (carouselIndex === activeIndex) {
 
-    carouselItem[carouselIndex].classList.add("active");
+    carouselItem.classList.add("active");
 
   };
 
+
+  nextButton.addEventListener("click", ()=> {
+  
+    // showNext();
+
+    carouselItem.classList.remove("active");
+
+    if (activeIndex < gamesTitles.length-1) {
+
+      activeIndex++
+        
+    } else {
+
+      activeIndex = 0;
+
+    };
+    
+  });
+
 });
 
-previousButton.addEventListener("click", ()=> {
-  
-  showNext();
-  
-});
+
 

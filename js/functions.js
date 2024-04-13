@@ -26,21 +26,26 @@ function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
         </div>
     `;
 
+};
+
+/**
+ * Description: function add class "active" to array element with Active Index.
+ * @param {object} arrayElemToActivate
+ * @param {number} triggerIndex
+ */
+function activeClassOnActiveIndex(arrayElemToActivate, triggerIndex) {
+
+    arrayElemToActivate[triggerIndex].classList.add("active");
 
 };
 
-function showNext() {
+/**
+ * Description: function remove class "active" to array element with Active Index.
+ * @param {object} arrayElemToActivate
+ * @param {number} triggerIndex
+ */
+function activeClassOffActiveIndex(arrayElemToActivate, triggerIndex) {
 
-    carouselItem.classList.remove("active");
-
-    if (activeIndex < gamesTitles.length-1) {
-
-        activeIndex++
-        
-    } else {
-
-        activeIndex = 0;
-
-    };
+    arrayElemToActivate[triggerIndex].classList.remove("active");
 
 };

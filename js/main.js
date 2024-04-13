@@ -55,37 +55,25 @@ const carouselItemArrayElem = document.querySelectorAll(".my-carousel-item");
 console.log("carouselItemArrayElem", carouselItemArrayElem, typeof carouselItemArrayElem);
 
 // Add class "active" to Carousel Item DOM Element.
+activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
-carouselItemArrayElem.forEach((carouselItem, carouselIndex)=> {
+// Add class "active" to Carousel Item DOM Element.
+nextButton.addEventListener("click", ()=> {
+  
+  activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
 
-  console.log(carouselItem, carouselIndex);
+  if (activeIndex < gamesTitles.length-1) {
 
-  if (carouselIndex === activeIndex) {
+    activeIndex++
 
-    carouselItem.classList.add("active");
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
+  } else {
+
+    activeIndex = 0;
+
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
   };
-
-
-  nextButton.addEventListener("click", ()=> {
   
-    // showNext();
-
-    carouselItem.classList.remove("active");
-
-    if (activeIndex < gamesTitles.length-1) {
-
-      activeIndex++
-        
-    } else {
-
-      activeIndex = 0;
-
-    };
-    
-  });
-
 });
-
-
-

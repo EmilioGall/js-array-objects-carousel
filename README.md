@@ -31,6 +31,12 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
     - [x] Define *constant* for display div HTMLelement. (displayDivElem)
     - [x] Print on (displayDivElem) the attributes of (printTitleOnDisplay).
 
+- [x] Define *function(activeClassOnActiveIndex)*
+    - [x] Add class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
+
+- [x] Define *function(activeClassOffActiveIndex)*
+    - [x] Remove class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
+
 ### DATA COLLECTION
 
 - [x] Define *constant* for array of objects Titles. (gamesTitles)
@@ -45,10 +51,20 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 - [x] **FOR EACH** object element of the array (gamesTitles)
     - [x] Invoke function(printTitleOnDisplay)
 
-- [x] Define *constant* for Carousel Item DOM element. (previousButton)
-
 - [x] Define *variable* for Active Index. (activeIndex)
 
-- [x] **ADD EVENT** *click* on (previousButton)
-    - [x] **ADD EVENT** *click* on (previousButton)
+- [x] Define *constant* for Carousel Item DOM element. (carouselItemArrayElem)
+
+- [x] Invoke function(activeClassOnActiveIndex)
+
+- [x] **ADD EVENT** *click* on (nextButton)
+    - [x] Invoke function(activeClassOffActiveIndex)
+    - [x] **IF** (activeIndex < gamesTitles.length-1)
+        - [x] Increment Active Index.
+        - [x] Invoke function(activeClassOnActiveIndex)
+    - [x] **ELSE**
+        - [x] Increment Active Index.
+        - [x] Invoke function(activeClassOnActiveIndex)
+
+
 

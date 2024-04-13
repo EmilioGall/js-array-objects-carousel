@@ -40,11 +40,14 @@ console.log("nextButton", nextButton, typeof nextButton);
 // Print in (displayDivElem) the attributes of (printTitleOnDisplay).
 gamesTitles.forEach((curTitle, indexTitle)=> {
 
-  console.log(curTitle);
+  // console.log(curTitle);
 
   printTitleOnDisplay(curTitle, indexTitle);
 
+  printTitleOnThumbnails(curTitle);
+
 });
+
 
 // Define *variable* for Active Index.
 let activeIndex = 0;
@@ -98,5 +101,3 @@ previousButton.addEventListener("click", ()=> {
   };
   
 });
-
-console.log(gamesTitles.length);

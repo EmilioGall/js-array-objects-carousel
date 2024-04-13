@@ -1,5 +1,5 @@
 /**
- * Description: function prints title
+ * Description: function prints title in display DOM element.
  * @param {object} titleToPrintOnDisplay
  */
 function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
@@ -24,6 +24,24 @@ function printTitleOnDisplay(titleToPrintOnDisplay, indexOfTitle) {
             </div>
 
         </div>
+    `;
+
+};
+
+/**
+ * Description: function prints title in thumbnails DOM element.
+ * @param {object} titleToPrintOnThumbnails
+ */
+function printTitleOnThumbnails(titleToPrintOnThumbnails) {
+
+    // Define *constant* for Carousel Thumbnails DOM Element.
+    const thumbnailsDivElem = document.querySelector(".my-thumbnails");
+
+    // console.log("thumbnailsDivElem", thumbnailsDivElem);
+
+    // Print on (thumbnailsDivElem) the attributes of (printTitleOnThumbnails).
+    thumbnailsDivElem.innerHTML += `
+    <img class="img-fluid my-thumbnail" src="./${titleToPrintOnThumbnails.image}" alt="${titleToPrintOnThumbnails.title} picture" />
     `;
 
 };

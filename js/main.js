@@ -72,6 +72,8 @@ nextButton.addEventListener("click", ()=> {
   
   activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
 
+  activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
   if (activeIndex < gamesTitles.length-1) {
 
     activeIndex++
@@ -84,12 +86,16 @@ nextButton.addEventListener("click", ()=> {
   
   activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
+  activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
 });
 
 // Add Event on *Click* for Next Previous DOM Element.
 previousButton.addEventListener("click", ()=> {
   
   activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+
+  activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
 
   if (activeIndex > 0) {
 
@@ -103,4 +109,6 @@ previousButton.addEventListener("click", ()=> {
   
   activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
+  activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+  
 });

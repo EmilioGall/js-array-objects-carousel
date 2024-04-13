@@ -37,7 +37,6 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 - [x] Define *function(activeClassOffActiveIndex)*
     - [x] Remove class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
 
-
 ### LOGICAL EXECUTION
 
 - [x] Define *constant* for array of objects Titles. (gamesTitles)
@@ -59,22 +58,23 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
 
 - [x] **ADD EVENT** *click* on (nextButton)
-    - [x] Invoke function(activeClassOffActiveIndex)
+    - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
     - [x] **IF** (activeIndex < gamesTitles.length-1)
         - [x] Increment Active Index.
-        - [x] Invoke function(activeClassOnActiveIndex)
     - [x] **ELSE**
         - [x] Set Active Index to 0.
-        - [x] Invoke function(activeClassOnActiveIndex)
+    - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
 
 - [x] **ADD EVENT** *click* on (previousButton)
-    - [x] Invoke function(activeClassOffActiveIndex)
+    - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
     - [x] **IF** (activeIndex > 0)
         - [x] Decrement Active Index.
-        - [x] Invoke function(activeClassOnActiveIndex)
     - [x] **ELSE**
         - [x] Set Active Index to gamesTitles.length-1.
-        - [x] Invoke function(activeClassOnActiveIndex)
-
+    - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
 
 

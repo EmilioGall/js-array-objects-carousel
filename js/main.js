@@ -27,7 +27,7 @@ const gamesTitles = [
   },
 ];
 
-// Print in (displayDivElem) the attributes of (printTitleOnDisplay).
+// Print in (displayDivElem) and (thumbnailsDivElem) the attributes of (printTitleOnDisplay).
 gamesTitles.forEach((curTitle, indexTitle)=> {
 
   // console.log(curTitle);
@@ -59,10 +59,10 @@ const carouselItemArrayElem = document.querySelectorAll(".my-carousel-item");
 // Add class "active" to Carousel Item DOM Element.
 activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
-// Define *constant* for Thumbnails Item DOM Element.
+// Define *constant* for Thumbnails Items DOM Elements.
 const thumbnailsItemArrayElem = document.querySelectorAll(".my-thumbnail");
 
-// console.log("thumbnailsItemArrayElem", thumbnailsItemArrayElem, typeof thumbnailsItemArrayElem);
+console.log("thumbnailsItemArrayElem", thumbnailsItemArrayElem, typeof thumbnailsItemArrayElem);
 
 // Add class "active" to Thumbnails Item DOM Element.
 activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
@@ -110,5 +110,26 @@ previousButton.addEventListener("click", ()=> {
   activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
   activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
+});
+
+// Add Event on *Click* for Thumbnails Item DOM Elements.
+thumbnailsItemArrayElem.forEach((curTitle, indexTitle)=> {
+
+  // console.log(curTitle);
+
+  curTitle.addEventListener("click", ()=> {
   
+    activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+  
+    activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
+    
+    activeClassOnActiveIndex(carouselItemArrayElem, indexTitle);
+  
+    activeClassOnActiveIndex(thumbnailsItemArrayElem, indexTitle);
+
+    activeIndex = indexTitle
+  
+  });
+
 });

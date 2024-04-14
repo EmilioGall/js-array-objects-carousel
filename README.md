@@ -30,33 +30,38 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 - [x] Define *function(printTitleOnDisplay)*
     - [x] Define *constant* for display div HTMLelement. (displayDivElem)
     - [x] Print on (displayDivElem) the attributes of (printTitleOnDisplay).
-
+> 
+- [x] Define *function(printTitleOnThumbnails)*
+    - [x] Define *constant* for thumbnails div HTMLelement. (thumbnailsDivElem)
+    - [x] Print on (thumbnailsDivElem) the attributes of (printTitleOnThumbnails).
+> 
 - [x] Define *function(activeClassOnActiveIndex)*
     - [x] Add class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
-
+> 
 - [x] Define *function(activeClassOffActiveIndex)*
     - [x] Remove class "active" to array element (arrayElemToActivate) with Active Index (triggerIndex).
 
 ### LOGICAL EXECUTION
 
 - [x] Define *constant* for array of objects Titles. (gamesTitles)
-
+> 
 - [x] **FOR EACH** object element of the array (gamesTitles)
     - [x] Invoke function(printTitleOnDisplay)
-
+    - [x] Invoke function(printTitleOnThumbnails)
+> 
 - [x] Define *constant* for Previous Button element. (previousButton)
 - [x] Define *constant* for Next Button element. (nextButton)
-
+> 
 - [x] Define *variable* for Active Index. (activeIndex)
-
+> 
 - [x] Define *constant* for Carousel Item DOM element. (carouselItemArrayElem)
-
+> 
 - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
-
+> 
 - [x] Define *constant* for Thumbnails Item DOM element. (thumbnailsItemArrayElem)
-
+> 
 - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
-
+> 
 - [x] **ADD EVENT** *click* on (nextButton)
     - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
     - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
@@ -66,7 +71,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
         - [x] Set Active Index to 0.
     - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
     - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
-
+> 
 - [x] **ADD EVENT** *click* on (previousButton)
     - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
     - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
@@ -76,5 +81,11 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
         - [x] Set Active Index to gamesTitles.length-1.
     - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
     - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
-
-
+> 
+- [x] **FOR EACH** object element of the array (thumbnailsItemArrayElem)
+    - [x] **ADD EVENT** *click* on (curTitle)
+        - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
+        - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
+        - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
+        - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
+        - [x] Set Active Index to indexTitle.

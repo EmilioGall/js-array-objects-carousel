@@ -69,3 +69,90 @@ function activeClassOffActiveIndex(arrayElemToActivate, triggerIndex) {
     arrayElemToActivate[triggerIndex].classList.remove("active");
 
 };
+
+/**
+ * Description: function activate slide forward.
+ */
+function goForward() {
+
+    activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+    
+    activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
+  
+    if (activeIndex < gamesTitles.length-1) {
+  
+      activeIndex++
+  
+    } else {
+  
+      activeIndex = 0;
+  
+    };
+    
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+  
+    activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
+};
+
+/**
+ * Description: function activateslide backward.
+ */
+function goBackward() {
+
+    activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+
+    activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
+  
+    if (activeIndex > 0) {
+  
+      activeIndex--
+  
+    } else {
+  
+      activeIndex = gamesTitles.length-1;
+  
+    };
+    
+    activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+  
+    activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
+};
+
+
+/**
+ * Description
+ * @returns {any}
+ */
+function slideStart() {
+
+    console.log("Started");
+
+    stopButton.removeEventListener("click", slideStart);
+
+    stopButton.addEventListener("click", slideStop);
+
+    if (goingForward === true) {
+
+        let autoPlay = setInterval(()=> goForward(),3000); 
+    
+    } else {
+    
+        let autoPlay = setInterval(()=> goBackward(),3000);
+    
+    };
+
+};
+
+function slideStop() {
+
+    console.log("Stopped");
+
+    stopButton.removeEventListener("click", slideStop);
+
+    stopButton.addEventListener("click", slideStart);
+
+    clearInterval(autoPlay);
+
+};

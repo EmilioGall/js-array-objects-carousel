@@ -133,3 +133,26 @@ thumbnailsItemArrayElem.forEach((curTitle, indexTitle)=> {
   });
 
 });
+
+// Define *constant* for autoPlay Time Interval.
+const autoPlay = setInterval(()=> {
+
+  activeClassOffActiveIndex(carouselItemArrayElem, activeIndex);
+
+  activeClassOffActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
+  if (activeIndex < gamesTitles.length-1) {
+
+    activeIndex++
+
+  } else {
+
+    activeIndex = 0;
+
+  };
+  
+  activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
+
+  activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
+
+},3000);

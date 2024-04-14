@@ -89,3 +89,13 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
         - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
         - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
         - [x] Set Active Index to indexTitle.
+>
+- [x] Define *constant* for autoPlay **TIME INTERVAL** of 5000. (autoPlay)
+    - [x] Invoke function(activeClassOffActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOffActiveIndex) of (thumbnailsItemArrayElem)
+    - [x] **IF** (activeIndex < gamesTitles.length-1)
+        - [x] Increment Active Index.
+    - [x] **ELSE**
+        - [x] Set Active Index to 0.
+    - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
+    - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)

@@ -156,3 +156,15 @@ const autoPlay = setInterval(()=> {
   activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
 
 },3000);
+
+let goingForward = true;
+
+// Define *constant* for Order Button DOM Element.
+const orderButton = document.getElementById("my-order-button");
+
+console.log("orderButton", orderButton, typeof orderButton);
+
+// Define *constant* for Stop/Play Button DOM Element.
+const stopButton = document.getElementById("my-stop-button")
+
+console.log("stopButton", stopButton, typeof stopButton);

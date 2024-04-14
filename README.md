@@ -99,3 +99,6 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
         - [x] Set Active Index to 0.
     - [x] Invoke function(activeClassOnActiveIndex) of (carouselItemArrayElem)
     - [x] Invoke function(activeClassOnActiveIndex) of (thumbnailsItemArrayElem)
+> 
+- [x] Define *constant* for Order Button element. (orderButton)
+- [x] Define *constant* for Stop/Play Button element. (stopButton)

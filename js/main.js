@@ -27,6 +27,8 @@ const gamesTitles = [
   },
 ];
 
+
+//////////
 // Print in (displayDivElem) and (thumbnailsDivElem) the attributes of (printTitleOnDisplay).
 gamesTitles.forEach((curTitle, indexTitle)=> {
 
@@ -38,6 +40,8 @@ gamesTitles.forEach((curTitle, indexTitle)=> {
 
 });
 
+
+//////////
 // Define *constant* for Previous Button DOM Element.
 const previousButton = document.querySelector(".my-previous");
 
@@ -48,6 +52,8 @@ const nextButton = document.querySelector(".my-next")
 
 // console.log("nextButton", nextButton, typeof nextButton);
 
+
+//////////
 // Define *variable* for Active Index.
 let activeIndex = 0;
 
@@ -59,6 +65,8 @@ const carouselItemArrayElem = document.querySelectorAll(".my-carousel-item");
 // Add class "active" to Carousel Item DOM Element.
 activeClassOnActiveIndex(carouselItemArrayElem, activeIndex);
 
+
+//////////
 // Define *constant* for Thumbnails Items DOM Elements.
 const thumbnailsItemArrayElem = document.querySelectorAll(".my-thumbnail");
 
@@ -67,12 +75,16 @@ console.log("thumbnailsItemArrayElem", thumbnailsItemArrayElem, typeof thumbnail
 // Add class "active" to Thumbnails Item DOM Element.
 activeClassOnActiveIndex(thumbnailsItemArrayElem, activeIndex);
 
+
+//////////
 // Add Event on *Click* for Next Button DOM Element.
 nextButton.addEventListener("click", ()=> goForward());
 
 // Add Event on *Click* for Previous Button DOM Element.
 previousButton.addEventListener("click", ()=> goBackward());
 
+
+//////////
 // Add Event on *Click* for Thumbnails Item DOM Elements.
 thumbnailsItemArrayElem.forEach((curTitle, indexTitle)=> {
 
@@ -94,6 +106,8 @@ thumbnailsItemArrayElem.forEach((curTitle, indexTitle)=> {
 
 });
 
+
+//////////
 // Define *constant* for Order Button DOM Element.
 const orderButton = document.getElementById("my-order-button");
 
@@ -102,76 +116,86 @@ console.log("orderButton", orderButton, typeof orderButton);
 // Define *constant* for Stop/Play Button DOM Element.
 const stopButton = document.getElementById("my-stop-button")
 
-console.log("stopButton", stopButton, typeof stopButton);
+// console.log("stopButton", stopButton, typeof stopButton);
 
-// Add Event on *Click* for Order Button DOM Element.
-orderButton.addEventListener("click", ()=> {
 
-  console.log("clicked");
+//////////
+// Define *variable* for Slide direction.
+let goingForward = false;
 
-  let autoPlayStatus = autoPlay;
+// Define *variable* for autoPlay Time Interval.
+let autoPlay = null;
 
-  clearInterval(autoPlayStatus);
+if (goingForward === true) {
 
-  if (goingForward === true) {
+  autoPlay = setInterval(()=> goForward(), 3000);
 
-    goingForward = false;
+} else {
 
-    console.log("goingForward", goingForward, typeof goingForward);
+  autoPlay = setInterval(()=> goBackward(), 3000);
 
+};
+
+console.log("autoPlay", autoPlay, typeof autoPlay);
+
+
+//////////
+// Add Event on *Click* for Stop Button DOM Element.
+stopButton.addEventListener("click", ()=> {
+  
+  if (autoPlay !== null) {
+
+    clearInterval(autoPlay);
+
+    autoPlay = null;
 
   } else {
 
-    goingForward = true;
+    if (goingForward === true) {
 
-    console.log("goingForward", goingForward, typeof goingForward);
+      autoPlay = setInterval(()=> goForward(),3000); 
+  
+    } else {
+    
+      autoPlay = setInterval(()=> goBackward(),3000);
+    
+      goingForward = false;
+
+    };
 
   };
 
 });
 
-// Define *variable* for Slide direction.
-let goingForward = true;
 
-// Define *variable* for Slide activity.
-let slideOn = true;
+//////////
+// Add Event on *Click* for Order Button DOM Element.
+orderButton.addEventListener("click", ()=> {
 
-// Define *constant* for autoPlay Time Interval.
-if (goingForward === true) {
+  console.log("clicked");
 
-  const autoPlay = setInterval(()=> goForward(),3000);
+  clearInterval(autoPlay);
 
-  stopButton.addEventListener("click", ()=> {
-  
-    if (slideOn ===true) {
+  autoPlay = null;
 
-      clearInterval(autoPlay);
+  console.log("autoPlay", autoPlay, typeof autoPlay);
 
-    } else {
+  if (goingForward === true) {
 
-      if (goingForward === true) {
+    autoPlay = setInterval(()=> goBackward(), 3000);
 
-        let autoPlay = setInterval(()=> goForward(),3000); 
-    
-      } else {
-      
-        let autoPlay = setInterval(()=> goBackward(),3000);
-      
-      };
+    goingForward = false;
 
-    };
-  
-  });
+    console.log("autoPlay", autoPlay, typeof autoPlay);
 
-} else {
+  } else {
 
-  const autoPlay = setInterval(()=> goBackward(),3000);
+    autoPlay = setInterval(()=> goForward(), 3000);
 
-  stopButton.addEventListener("click", ()=> {
-  
-    clearInterval(autoPlay);
-  
-  });
+    goingForward = true;
 
-};
+    console.log("autoPlay", autoPlay, typeof autoPlay);
 
+  };
+
+});
